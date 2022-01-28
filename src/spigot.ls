@@ -37,7 +37,7 @@ parsePlugin = (node) ->
         case 'ONDISABLE'
             result += 'public void onDisable(){' + parseMethod(child) + '}'
         case 'COMMAND'
-            commands += 'if (command.getName().equalsIgnoreCase("' + child.attributes['name'] + '")){' + parseMethod(child) + '}'
+            commands += 'if (command.getName().equalsIgnoreCase("' + child.attributes['name'].textContent + '")){' + parseMethod(child) + '}'
         default
             result = 'Unexpected token ' + child.nodeName
     if commands

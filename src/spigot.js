@@ -51,7 +51,7 @@
         result += 'public void onDisable(){' + parseMethod(child) + '}';
         break;
       case 'COMMAND':
-        commands += 'if (command.getName().equalsIgnoreCase("' + child.attributes['name'] + '")){' + parseMethod(child) + '}';
+        commands += 'if (command.getName().equalsIgnoreCase("' + child.attributes['name'].textContent + '")){' + parseMethod(child) + '}';
         break;
       default:
         result = 'Unexpected token ' + child.nodeName;
